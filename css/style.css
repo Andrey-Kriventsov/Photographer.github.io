@@ -1,0 +1,365 @@
+:root {
+    --primary-color: rgb(139, 201, 211); /* Основной цвет сайта (бирюзовый) */
+    --accent-color: #d8d9db; /* Акцентный/фоновый цвет (светло-серый) */
+    --footer-bg-color: #e1e111b7; /* Цвет фона футера (полупрозрачный бирюзовый) */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    color: rgb(44, 44, 44);
+}
+
+/* Установка шрифта Cormorant Garamond для всех текстовых элементов */
+h1, h2, h3, h4, h5, h6,
+p, span, a, li, label,
+.navbar-brand, .nav-link,
+.card-title, .btn,
+.section-title, .lead,
+.form-label, .form-control,
+.text-body-secondary, .inline-heading,
+.text-medium, .text-xlarge,
+.portfolio-overlay h5,
+.overlay-content h5,
+.overlay-content p,
+.overlay-content li,
+.left-aligned-list li,
+.service-card ul li,
+.text-center, .text-start,
+.text-white, .text-primary,
+.text-dark, .error-message,
+.contact, footer, footer p,
+.social-icons a,
+.mb-0, .mt-3, .mt-4 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Особые настройки для заголовков */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.navbar-brand {
+    font-weight: 500;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+.lead {
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+/* Кнопки */
+.btn {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.btn-lg {
+    font-size: 1.2rem;
+}
+
+/* Формы */
+.form-label {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.form-control {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* Списки */
+.left-aligned-list li,
+.service-card ul li,
+.overlay-content li {
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Заголовок в геро-секции */
+.title-with-bg span {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 3px;
+}
+
+/* Футер */
+footer, footer p {
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.social-icons a {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+
+a:focus, button:focus { 
+    outline: 6px solid var(--primary-color); 
+}
+
+/* =========== НАВИГАЦИОННАЯ ПАНЕЛЬ =========== */
+.navbar {
+    padding: 15px 0; /* Увеличенные отступы */
+    transition: all 0.4s ease; /* Плавные переходы */
+    height: 70px; /* Фиксированная высота */
+}
+
+.text-body-secondary {
+    display: flex;
+    align-items: center; /* вертикальное выравнивание */
+    gap: 8px; /* расстояние между элементами */
+}
+.text-body-secondary h1,
+.text-body-secondary h2 {
+    margin: 0;
+}
+
+.navbar.scrolled {
+    padding: 8px 0; /* Уменьшаем отступы при прокрутке */
+    height: 70px; /* Уменьшаем высоту при прокрутке */
+    background-color: rgba(255, 255, 255, 0.95) !important; /* Полупрозрачный белый */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.396); /* Тень при прокрутке */
+    backdrop-filter: blur(10px); /* Размытие фона */
+}
+
+.navbar-brand {
+    font-weight: 500;
+    font-size: 1.0rem; /* Увеличенный размер логотипа */
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .navbar-brand {
+    font-size: 1.0rem; /* Уменьшаем логотип при прокрутке */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem; /* Увеличенный размер ссылок */
+    padding: 10px 20px !important; /* Большие отступы */
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: var(--primary-color); /* 1. Изменение фона */
+    color: white !important; /* 2. Изменение цвета текста */
+    transform: translateY(-2px); /* 3. Анимация поднятия */
+}
+
+.navbar-toggler {
+    border: none; /* 1. Убирает рамку */
+    padding: 10px; /* 2. Добавляет отступы */
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px var(--primary-color);
+}
+.nav-link:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Главный Баннер */ 
+.hero-section {
+    position: relative;
+    padding: 270px 0; /* Большие отступы сверху/снизу */
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .text-xlarge {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+    .hero-section {
+        padding: 150px 0;
+    }
+}
+
+/* О себе */
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 30px; /* Отступы вокруг фото */
+}
+
+.image-wrapper::before {
+    background: var(--accent-color); /* Используйте переменную цвета */
+    filter: blur(35px);
+    opacity: 0.3;
+    z-index: -2;
+    border-radius: 30px;
+    margin: -15px;
+}
+
+.custom-image {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    max-height: 850px;
+    object-fit: cover; /* Обрезка фото для сохранения пропорций */
+    border-radius: 20px; /* Закруглённые углы */
+    box-shadow: 0 15px 35px rgba(99, 97, 97, 0.644); /* Тень для объёма */
+    position: relative;
+    z-index: 1; /* Поверх размытого фона */
+}
+
+.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Растягивает изображение на весь блок */
+    z-index: -1; /* Отправляет на задний план */
+}
+
+/* Декоративная линия под заголовками разделов */ 
+.section-title {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem; /* Место для декоративной линии */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Центровка линии */
+    width: 100px;
+    height: 3px;
+    background-color: var(--primary-color); /* Линия основного цвета */
+}
+
+/* Портфолио, контейнер для каждого элемента портфолио */
+.portfolio-item {
+    position: relative;
+    overflow: hidden; /* Скрывает выходящее за границы */
+    border-radius: 8px; /* Закруглённые углы */
+    aspect-ratio: 1 / 1; /* Квадратные элементы */
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполнение квадрата с обрезкой */
+    display: block;
+    transition: opacity 0.5s ease, transform 0.3s ease; /* Плавная анимация */
+}
+
+.portfolio-item:hover .portfolio-img {
+    transform: scale(1.20); /* Увеличение при наведении */
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(78, 81, 81, 0.614); /* Тёмный полупрозрачный фон */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Скрыт по умолчанию */
+    transition: opacity 0.4s ease; /* Плавное появление */
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1; /* Показываем оверлей при наведении */
+}
+
+/* Карточки услуг */ 
+.service-card {                                   
+    border: none; /* Убирает стандартную рамку Bootstrap */
+    transition: transform 0.3s ease;
+    height: 100%; /* Выравнивает высоту карточек в ряду */
+}
+/* Эффект "всплывания" карточек услуг */
+.service-card:hover {       
+    transform: translateY(-15px); /* Поднимает карточку при наведении */
+}
+
+/* Стили для выровненных списков */
+.left-aligned-list {
+    text-align: left; /* Принудительное выравнивание по левому краю */
+}
+
+.left-aligned-list ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.left-aligned-list li {
+    text-align: left;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Стили для контента в overlay */
+.overlay-content {
+    padding: 20px;
+    text-align: left;
+    height: 100%;
+    overflow-y: auto; /* Прокрутка, если контент не помещается */
+}
+
+.overlay-content h5 {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.overlay-content p {
+    margin-bottom: 10px;
+}
+
+.overlay-content ul {
+    font-size: 0.9rem;
+}
+
+/* Футер */        
+footer {
+    background-color: #222; /* Использует переменную цвета */
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.833);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(83, 162, 176, 0.686);
+}
+
+footer a:hover {
+    color: #222222cb;
+    background: #ffffffd8;
+    transform: translateY(-3px);
+}
